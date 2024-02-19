@@ -1,0 +1,3 @@
+timeout 300 'swaylock --clock --indicator --ring-color 232629 --inside-color 1B1E20 -e -f -i ~/.config/hypr/mountain.png' 
+timeout 600 'systemctl suspend'
+before-sleep 'swaylock --clock --indicator --ring-color 232629 --inside-color 1B1E20 -e -f -i ~/.config/hypr/mountain.png' 
