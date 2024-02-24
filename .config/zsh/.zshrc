@@ -41,8 +41,8 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # key binds
-bindkey '^[OH' beginning-of-line
-bindkey '^[OF' end-of-line
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 bindkey '^[[3~' delete-char
 
 # stop odd behavior with tryong to glob match
@@ -79,5 +79,5 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # substring search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-bindkey '^[OA' history-substring-search-up
-bindkey '^[OB' history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
