@@ -1,7 +1,7 @@
 [
  {
    "label": "Lock",
-   "exec": "swaylock --clock --indicator --ring-color 232629 --inside-color 1B1E20 -e -f -i ~/.config/hypr/mountain.png",
+   "exec": "hyprlock",
    "icon": "/usr/share/nwg-bar/images/system-lock-screen.svg"
  },
  {
