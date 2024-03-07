@@ -3,9 +3,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# -- Window manager
-export QT_QPA_PLATFORMTHEME='qt5ct'
-
 # Example IME Support: fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
