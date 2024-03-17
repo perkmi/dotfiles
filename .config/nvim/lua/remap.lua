@@ -6,7 +6,7 @@ vim.keymap.set("c", "w!!", "w !sudo tee > /dev/null %")
 
 -- Keymaps
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex)
-vim.keymap.set("n", "<leader>wh", [[:%s/\s\+$//e<CR>]])
+vim.keymap.set("n", "<leader>s", [[:%s/\s\+$//e<CR>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Shortcutting split navigation
