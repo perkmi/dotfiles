@@ -6,7 +6,7 @@ paru -S hypridle hyprlock swaync brave-bin nwg-bar zsh-fast-syntax-highlighting 
 
 = neovim =
 `:PlugInstall`
-`:LspInstall clangd taplo hydra_lsp jsonls lua_ls rust_analyzer vimls yamlls`
+`:LspInstall` clangd taplo hydra_lsp jsonls lua_ls rust_analyzer vimls yamlls
 
 = fstab =
 //192.168.1.5/share /mnt/nas cifs credentials=/home/mikko/.config/nas/smbnas,vers=3.0,x-systemd.automount,_netdev,uid=1026,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
