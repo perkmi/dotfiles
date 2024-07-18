@@ -115,3 +115,8 @@ label:focus {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+#custom-gpu-usage {
+    color: #3DAEE9;
+    margin: 6px 6px;
+}

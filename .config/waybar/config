@@ -10,6 +10,8 @@
         "custom/separator",
         "cpu",
         "custom/separator",
+        "custom/gpu-usage",
+        "custom/separator",
         "memory",
         "custom/separator"],
     "modules-center": ["hyprland/window"],
@@ -31,12 +33,22 @@
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "hyprland/window":{
+        "rewrite": {
+            "New Tab - Brave": "Brave"
+        },
         "separate-outputs": true
     },
     "custom/separator": {
         "format": "|",
         "interval": "once",
         "tooltip": false
+    },
+    "custom/gpu-usage": {
+        "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+        "format": "󰾲 {}%",
+        "return-type": "",
+        "interval": 10,
+        "on-click": "alacritty -e radeontop -c"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -81,7 +93,7 @@
       "format": "{icon} {volume}% {format_source}",
       "format-bluetooth": "{icon}  {volume}% {format_source}",
       "format-bluetooth-muted": " {format_source}",
-      "format-muted": "  {format_source}",
+      "format-muted": " {format_source}",
       "format-source": " {volume}%",
       "format-source-muted": "",
       "format-icons": {
@@ -91,7 +103,7 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", "", ""]
+        "default": [" ", " ", " "]
       },
       "on-click": "pavucontrol"
     },
