@@ -47,8 +47,8 @@
         "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
         "format": "󰾲 {}%",
         "return-type": "",
-        "interval": 10,
-        "on-click": "alacritty -e radeontop -c"
+        "interval": 5,
+        "on-click": "alacritty -e radeontop -cT"
     },
     "idle_inhibitor": {
         "format": "{icon}",
