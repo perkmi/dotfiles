@@ -10,3 +10,8 @@ paru -S hypridle hyprlock swaync brave-bin nwg-bar zsh-fast-syntax-highlighting 
 
 = fstab =
 //ip/share /mnt/nas cifs credentials=/path/to/file,vers=3.0,x-systemd.automount,_netdev,uid=1026,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+
+= dolphin =
+kbuildsycoca6
+sudo ln -s /etc/xdg/menus/plasma-applications.menu /etc/xdg/menus/applications.menu
+kcmshell6 componentchooser
