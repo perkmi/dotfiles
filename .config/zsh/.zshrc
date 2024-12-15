@@ -66,7 +66,7 @@ alias ..='cd ..'
 alias clamdscan='clamdscan --multiscan --fdpass -v'
 alias yeet='paru -Rsc'
 alias ssh='TERM='xterm-256color' ssh'
-alias monerod='monerod --prune-blockchain --data-dir /run/media/mikko/Toki/monero/blockchain'
+alias monerod='monerod --prune-blockchain --data-dir /run/media/mikko/Murderface/monero/blockchain'
 alias mbsync="mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc"
 alias ytd="yt-dlp"
 alias fobs="flatpak run com.obsproject.Studio"

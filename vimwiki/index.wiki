@@ -15,3 +15,8 @@ paru -S hypridle hyprlock swaync brave-bin nwg-bar zsh-fast-syntax-highlighting 
 kbuildsycoca6
 sudo ln -s /etc/xdg/menus/plasma-applications.menu /etc/xdg/menus/applications.menu
 kcmshell6 componentchooser
+
+= gentoo theming =
+cd /usr/share/color-schemes
+sudo mv BreezeLight.colors BreezeLight.colors.bak
+sudo cp BreezeDark.colors BreezeLight.colors
