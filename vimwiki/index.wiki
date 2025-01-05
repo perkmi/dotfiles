@@ -22,3 +22,7 @@ gsettings set org.gnome.desktop.interface gtk-theme Breeze (or Breeze-Dark)
 cd /usr/share/color-schemes
 sudo mv BreezeLight.colors BreezeLight.colors.bak
 sudo cp BreezeDark.colors BreezeLight.colors
+
+For GTK themes as root:
+ln -s $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+ln -s $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
