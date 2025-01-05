@@ -137,12 +137,8 @@ ColorSchemeHash=babca25f3a5cf7ece26a85de212ab43d0a141257
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
 
-[Icons]
-Theme=breeze-dark
-
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
-widgetStyle=qt6ct-style
 
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false
