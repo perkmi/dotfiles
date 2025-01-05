@@ -17,6 +17,8 @@ sudo ln -s /etc/xdg/menus/plasma-applications.menu /etc/xdg/menus/applications.m
 kcmshell6 componentchooser
 
 = gentoo theming =
+gsettings set org.gnome.desktop.interface gtk-theme Breeze (or Breeze-Dark)
+
 cd /usr/share/color-schemes
 sudo mv BreezeLight.colors BreezeLight.colors.bak
 sudo cp BreezeDark.colors BreezeLight.colors
