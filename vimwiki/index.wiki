@@ -26,3 +26,11 @@ sudo cp BreezeDark.colors BreezeLight.colors
 For GTK themes as root:
 ln -s $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
 ln -s $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+
+= gui as sudo =
+xhost + local:
+
+or
+
+echo 'Defaults   env_keep += "XDG_RUNTIME_DIR"
+Defaults   env_keep += "WAYLAND_DISPLAY"' | sudo tee /etc/sudoers.d/wayland
