@@ -141,8 +141,8 @@ TerminalService=Alacritty.desktop
 LookAndFeelPackage=org.kde.breezedark.desktop
 
 [PreviewSettings]
-EnableRemoteFolderThumbnail=false
-MaximumRemoteSize=0
+EnableRemoteFolderThumbnail=true
+MaximumRemoteSize=10485758951424
 
 [WM]
 activeBackground=49,54,59
