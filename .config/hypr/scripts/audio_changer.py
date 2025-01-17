@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 import subprocess
 
 # function to parse output of command "wpctl status" and return a dictionary of sinks with their id and name.
@@ -26,7 +26,7 @@ def parse_wpctl_status():
     # remove the "[vol:" from the end of the sink name
     for index, sink in enumerate(sinks):
         sinks[index] = sink.split("[vol:")[0].strip()
-    
+
     # strip the * from the default sink and instead append "- Default" to the end. Looks neater in the wofi list this way.
     for index, sink in enumerate(sinks):
         if sink.startswith("*"):
@@ -43,10 +43,10 @@ def get_selected_sink_id(sinks):
         for index, item in enumerate(sinks):
             if not item['sink_name'].endswith(" - Default"):
                 return item['sink_id']
-    else: 
+    else:
         # get the list of sinks ready to put into wofi - highlight the current default sink
         output = ''
-        for items in sinks:        
+        for items in sinks:
             if items['sink_name'].endswith(" - Default"):
                 output += f"<b>-> {items['sink_name']}</b>\n"
             else:

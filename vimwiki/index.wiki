@@ -34,3 +34,6 @@ or
 
 echo 'Defaults   env_keep += "XDG_RUNTIME_DIR"
 Defaults   env_keep += "WAYLAND_DISPLAY"' | sudo tee /etc/sudoers.d/wayland
+
+== Laptop WiFi ==
+install rtl8821ce-dkms-git from the AUR
