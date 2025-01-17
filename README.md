@@ -1,6 +1,6 @@
 # dotfiles
 
 cd ~/.config \
-git clone https://github.com/perkmi/dotfiles \
+git clone git@github.com:perkmi/dotfiles.git \
 cd dotfiles \
 stow -t ~/ .
