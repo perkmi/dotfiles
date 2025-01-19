@@ -3,8 +3,6 @@ pfetch
 
 # enable colors
 autoload -U colors && colors
-#PS1="%B%{$fg[blue]%}%n %{$fg[yellow]%}%~ %{$fg[green]%}❯%{$reset_color%}%b "
-#PS1="%B%F{blue}%n %F{yellow}%~ %F{green}❯%F{reset_color}%b "
 setopt autocd		# Automatically cd into typed directory.
 
 function parse_git_branch() {
