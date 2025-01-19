@@ -22,12 +22,12 @@ SAVEHIST=100000
 HISTFILE=${ZDOTDIR}/.histfile
 
 # ls colors
-LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
-export LS_COLORS
+#LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+#export LS_COLORS
 
 # auto/tab complete:
 autoload -U compinit
-zstyle ':completion:*' menu select 
+zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -50,9 +50,9 @@ setopt nonomatch
 alias sudo='sudo '
 alias please='sudo $(fc -ln -1)'
 alias ls='lsd'
+alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias ll='ls -l'
 alias lt='ls --tree'
 alias grep='grep --color=auto'
 alias vim='nvim'
@@ -61,16 +61,18 @@ alias svim='sudo -e'
 alias svi='sudo -e'
 alias -- -='cd -'
 alias ..='cd ..'
+alias clamdscan='clamdscan --multiscan --fdpass -v'
+alias yeet='paru -Rsc'
 alias ssh='TERM='xterm-256color' ssh'
-alias monerod='monerod --data-dir /run/media/mikko/Toki/monero/blockchain'
+alias monerod='monerod --prune-blockchain --data-dir /run/media/mikko/Murderface/monero/blockchain'
+alias mbsync="mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc"
 alias ytd="yt-dlp"
-#alias fobs="flatpak run com.obsproject.Studio"
-alias clamscan="clamdscan --multiscan --fdpass"
+alias fobs="flatpak run com.obsproject.Studio"
 
 # load fast-syntax-highlighting
 source /home/mikko/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# load zsh-autosuggestions                 
+# load zsh-autosuggestions
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 
 # substring search
@@ -79,5 +81,5 @@ source /usr/share/zsh/site-functions/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Created by `pipx` on 2024-01-24 13:46:45
+# Created by `pipx` on 2024-03-17 18:13:29
 export PATH="$PATH:/home/mikko/.local/bin"
