@@ -1,0 +1,146 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
+    font-size: 14px;
+}
+
+window#waybar {
+
+    background-color: rgba(35, 38, 41, 0.85);
+    /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 4px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin: 4px 0 6px 0;
+    background-color: transparent;
+    /*color: #3DAEE9;*/
+    color: #3DAEE9;
+    min-width: 25px;
+}
+
+#workspaces button.active {
+    padding: 0 0 0 0;
+    margin: 4px 0 6px 0;
+    background-color: #3DAEE9;
+    color: #000000;
+    min-width: 25px;
+}
+
+#workspaces button:hover {
+    color: #3DAEE9;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #bbccdd;
+    color: #323232;
+}
+
+#workspaces button.urgent {
+    color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#idle_inhibitor {
+    padding: 0px 3px;
+    margin: 4px 3px 5px 3px;
+    background-color:transparent;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#window{
+    color: #3DAEE9;
+}
+
+#clock {
+    /*color: #27AE60;*/
+    color: #3DAEE9;
+}
+
+#battery {
+    /*background-color: #ffffff;*/
+    color: #3DAEE9;
+}
+
+#battery.charging, #battery.plugged {
+    color: #3DAEE9;
+    /*background-color: #26A65B;*/
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    /*color: #27AE60;*/
+    color: #3DAEE9;
+}
+
+#memory {
+    color: #3DAEE9;
+}
+
+#network {
+    /*color: #27AE60;*/
+    color: #3DAEE9;
+    margin-right: 8px;
+}
+
+#pulseaudio {
+    color: #3DAEE9;
+}
+
+#pulseaudio.muted {
+    color: #a0a0a0;
+}
+
+#idle_inhibitor {
+    color: #3DAEE9;
+    margin-right: 7px;
+    font-size: 18px;
+}
+
+#custom-separator {
+    color: #606060;
+    margin: 0 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
