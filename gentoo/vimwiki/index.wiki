@@ -19,6 +19,8 @@ kcmshell6 componentchooser
 = gentoo theming =
 gsettings set org.gnome.desktop.interface gtk-theme Breeze (or Breeze-Dark)
 
+kcmshell6 colors
+
 cd /usr/share/color-schemes
 sudo mv BreezeLight.colors BreezeLight.colors.bak
 sudo cp BreezeDark.colors BreezeLight.colors
