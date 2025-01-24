@@ -16,6 +16,9 @@ kbuildsycoca6
 sudo ln -s /etc/xdg/menus/plasma-applications.menu /etc/xdg/menus/applications.menu
 kcmshell6 componentchooser
 
+to remove annoying skype menu
+sudo rm /usr/share/applications/skypeforlinux-share.desktop
+
 = gentoo theming =
 gsettings set org.gnome.desktop.interface gtk-theme Breeze (or Breeze-Dark)
 
