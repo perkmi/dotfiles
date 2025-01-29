@@ -7,13 +7,20 @@ require'lspconfig'.clangd.setup{
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 }
 require'lspconfig'.hydra_lsp.setup{}
+require'lspconfig'.hyprls.setup{}
+vim.filetype.add({
+    pattern = {
+        ['.*/waybar/config'] = 'jsonc',
+        ['.*/hypr/.*%.conf'] = 'hyprlang'
+    },
+})
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.lua_ls.setup{
   settings = {
     Lua = {
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {"vim"},
+        globals = {'vim'},
       },
     },
   },

@@ -110,5 +110,5 @@
         "default": ["", "", ""]
       },
       "on-click": "pavucontrol"
-    },
+    }
 }
