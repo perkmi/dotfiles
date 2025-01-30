@@ -1,11 +1,3 @@
-vim.filetype.add(
-    {
-        pattern = {
-            ["./waybar/config"] = "jsonc",
-            ["./hypr/.%.conf"] = "hyprlang"
-        }
-    }
-)
 -- Ensure Tree-sitter highlighting is always enabled for hyprlang files
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "hyprlang", -- Only enable for hyprlang file type

@@ -8,12 +8,6 @@ require'lspconfig'.clangd.setup{
 }
 require'lspconfig'.hydra_lsp.setup{}
 require'lspconfig'.hyprls.setup{}
-vim.filetype.add({
-    pattern = {
-        ['.*/waybar/config'] = 'jsonc',
-        ['.*/hypr/.*%.conf'] = 'hyprlang'
-    },
-})
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.lua_ls.setup{
   settings = {
@@ -39,3 +33,9 @@ require'lspconfig'.rust_analyzer.setup{
     },
   },
 }
+vim.filetype.add({
+    pattern = {
+        ['.*/waybar/config'] = 'jsonc',
+        ['.*/hypr/.*%.conf'] = 'hyprlang'
+    },
+})
