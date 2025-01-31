@@ -9,7 +9,6 @@
 window#waybar {
 
     background-color: rgba(35, 38, 41, 0.85);
-    /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -24,7 +23,6 @@ window#waybar.hidden {
     padding: 0px;
     margin: 4px 0 6px 0;
     background-color: transparent;
-    /*color: #3DAEE9;*/
     color: #3DAEE9;
     min-width: 25px;
 }
@@ -73,18 +71,15 @@ window#waybar.hidden {
 }
 
 #clock {
-    /*color: #27AE60;*/
     color: #3DAEE9;
 }
 
 #battery {
-    /*background-color: #ffffff;*/
     color: #3DAEE9;
 }
 
 #battery.charging, #battery.plugged {
     color: #3DAEE9;
-    /*background-color: #26A65B;*/
 }
 
 @keyframes blink {
@@ -110,7 +105,6 @@ label:focus {
 }
 
 #cpu {
-    /*color: #27AE60;*/
     color: #3DAEE9;
 }
 
@@ -119,7 +113,6 @@ label:focus {
 }
 
 #network {
-    /*color: #27AE60;*/
     color: #3DAEE9;
     margin-right: 8px;
 }
