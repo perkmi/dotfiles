@@ -1,6 +1,6 @@
 lua require('remap')
-lua require('treesitter')
 lua require('vim_plug')
+lua require('treesitter')
 lua require('mason_conf')
 lua require('nvim_cmp')
 lua require('lsp')

@@ -113,7 +113,7 @@ mods = "Control"
 [[keyboard.bindings]]
 action = "ToggleViMode"
 key = "Space"
-mods = "Control"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "ScrollToBottom"

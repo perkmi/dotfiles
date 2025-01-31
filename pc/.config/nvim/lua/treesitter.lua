@@ -1,9 +1,8 @@
--- Ensure Tree-sitter highlighting is always enabled for hyprlang files
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "hyprlang", -- Only enable for hyprlang file type
-    callback = function(args)
-        local buf = args.buf -- Get the buffer number
-        -- Enable Tree-sitter highlighting for the buffer
-        vim.treesitter.start(buf, "hyprlang") -- Use the hyprlang parser
-    end
-})
+require'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+    ensure_installed = { "c", "hyprlang", "lua", "markdown", "markdown_inline", "query", "vim", "vimdoc" },
+    highlight = {
+        enable = true,
+        disable = { "c", "lua", "markdown", "markdown_inline", "query", "vim", "vimdoc" },
+    }
+}

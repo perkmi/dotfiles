@@ -2,6 +2,7 @@
 vim.g.codedark_italics = 1
 vim.g.codedark_transparent = 1
 vim.g.airline_theme = 'codedark'
+vim.cmd.colorscheme('codedark')
 
 -- air-line
 vim.g.airline_powerline_fonts = 1

@@ -1,6 +1,9 @@
 -- Set up lspconfig.
 -- look in https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require("mason-lspconfig").setup {
+    ensure_installed = { "clangd", "hydra_lsp", "hyprls", "jsonls", "lua_ls", "rust_analyzer", "taplo", "vimls", "yamlls" }
+}
 require'lspconfig'.clangd.setup{
   capabilities = capabilities,
   cmd = {"clangd"},
@@ -14,14 +17,11 @@ require'lspconfig'.lua_ls.setup{
     Lua = {
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = {'vim'}
       },
     },
   },
 }
-require'lspconfig'.taplo.setup{}
-require'lspconfig'.vimls.setup{}
-require'lspconfig'.yamlls.setup{}
 require'lspconfig'.rust_analyzer.setup{
     capabilities = capabilities,
     filetypes = {"rust"},
@@ -33,6 +33,9 @@ require'lspconfig'.rust_analyzer.setup{
     },
   },
 }
+require'lspconfig'.taplo.setup{}
+require'lspconfig'.vimls.setup{}
+require'lspconfig'.yamlls.setup{}
 vim.filetype.add({
     pattern = {
         ['.*/waybar/config'] = 'jsonc',
