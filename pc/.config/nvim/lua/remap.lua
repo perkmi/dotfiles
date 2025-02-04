@@ -16,3 +16,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
+
+-- LSP Keymaps
+-- Next code action (e.g., fix diagnostics or apply suggestions)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
