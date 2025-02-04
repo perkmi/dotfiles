@@ -14,16 +14,6 @@ vim.o.clipboard = "unnamedplus"
 
 vim.g.rustfmt_autosave = 1
 
--- undotree
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-
-vim.cmd [[
-:hi link NvimTreeExecFile Title
-:hi link NvimTreeImageFile NvimTreeNormal
-:hi link NvimTreeSpecialFile NvimTreeNormal
-:hi link NvimTreeSymlink NvimTreeSpecialFile
-]]
-
 -- vimwiki colors
 vim.cmd [[
 hi VimwikiHeader1 guifg=#87d7ff

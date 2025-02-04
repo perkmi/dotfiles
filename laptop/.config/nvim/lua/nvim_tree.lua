@@ -31,4 +31,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end
 })
 
-vim.keymap.set("n", "<C-f>", [[:NvimTreeToggle<CR>]])
+vim.cmd [[
+:hi link NvimTreeExecFile Title
+:hi link NvimTreeImageFile NvimTreeNormal
+:hi link NvimTreeSpecialFile NvimTreeNormal
+:hi link NvimTreeSymlink NvimTreeSpecialFile
+]]
