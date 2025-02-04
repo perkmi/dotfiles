@@ -13,13 +13,3 @@ vim.o.splitbelow = true
 vim.o.clipboard = "unnamedplus"
 
 vim.g.rustfmt_autosave = 1
-
--- vimwiki colors
-vim.cmd [[
-hi VimwikiHeader1 guifg=#87d7ff
-hi VimwikiHeader2 guifg=#327E9F
-hi VimwikiHeader3 guifg=#327E9F
-hi VimwikiHeader4 guifg=#327E9F
-hi VimwikiHeader5 guifg=#327E9F
-hi VimwikiHeader6 guifg=#327E9F
-]]

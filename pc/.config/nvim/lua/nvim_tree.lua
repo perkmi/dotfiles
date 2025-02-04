@@ -1,13 +1,21 @@
--- setup
+-- nvim_tree
 require("nvim-tree").setup({
   sort = {
-    sorter = "case_sensitive",
+    sorter = "name",
   },
   view = {
     width = 30,
   },
   renderer = {
     group_empty = true,
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "",  -- Arrow for closed folders
+          arrow_open = "",    -- Arrow for open folders
+        },
+      },
+    },
   },
   filters = {
     dotfiles = false,
@@ -30,10 +38,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
     if layout[1] == "leaf" and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree" and layout[3] == nil then vim.cmd("confirm quit") end
   end
 })
-
-vim.cmd [[
-:hi link NvimTreeExecFile Title
-:hi link NvimTreeImageFile NvimTreeNormal
-:hi link NvimTreeSpecialFile NvimTreeNormal
-:hi link NvimTreeSymlink NvimTreeSpecialFile
-]]
