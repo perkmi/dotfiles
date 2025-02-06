@@ -13,7 +13,8 @@
         "custom/gpu-usage",
         "custom/separator",
         "memory",
-        "custom/separator"],
+        "custom/separator"
+    ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "custom/separator",
@@ -26,13 +27,14 @@
         "clock",
         "custom/separator",
         "tray",
-        "custom/separator"],
+        "custom/separator"
+    ],
     "hyprland/workspaces": {
         "format": "{name}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
-    "hyprland/window":{
+    "hyprland/window": {
         "rewrite": {
             "New Tab - Brave": "Brave"
         },
@@ -46,7 +48,8 @@
     "custom/gpu-usage": {
         "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
         "format": "󰾲 {}%",
-        "return-type": "",
+        "tooltip": true,
+        "tooltip-format": "GPU Usage: {}%",
         "interval": 5,
         "on-click": "alacritty -e radeontop -cT"
     },
@@ -65,46 +68,57 @@
         "interval": 1,
         "locale": "C",
         "format": " {:%I:%M %p}",
-        "format-alt": " {:%a,%b %d}"
+        "format-alt": " {:%a, %b %d}",
+        "tooltip": true,
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
     "cpu": {
         "format": " {usage}%",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "CPU: {usage}% (Avg Load: {load})",
         "on-click": "alacritty -e 'btop'"
     },
     "memory": {
         "interval": 30,
         "format": " {used:0.2f}GB",
-
-        "max-length": 10,
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "Memory: {used:0.2f}GB / {total:0.2f}GB ({percentage}%)",
         "warning": 70,
         "critical": 90
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr} 󰈀",
-        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈀\nDownload: {bandwidthDownBits} 󰇚\nUpload: {bandwidthUpBits} 󰇚",
         "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
-      "format": "{icon} {volume}% {format_source}",
-      "format-bluetooth": "{icon}  {volume}% {format_source}",
-      "format-bluetooth-muted": " {format_source}",
-      "format-muted": " {format_source}",
-      "format-source": " {volume}%",
-      "format-source-muted": "",
-      "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": [" ", " ", " "]
-      },
-      "on-click": "pavucontrol"
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon}  {volume}% {format_source}",
+        "format-bluetooth-muted": " {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "tooltip": true,
+        "tooltip-format": "Battery: {capacity}% ({time})",
+        "interval": 30
     }
 }

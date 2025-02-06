@@ -1,52 +1,44 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    border: none;
-    font-family: "JetBrainsMono Nerd Font";
-    /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
-    font-size: 14px;
+border: none;
+font-family: "JetBrainsMono Nerd Font";
+font-size: 14px;
 }
 
 window#waybar {
-
     background-color: rgba(35, 38, 41, 0.85);
-    color: #ffffff;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
     border-radius: 4px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
 #workspaces button {
-    padding: 0px;
-    margin: 4px 0 6px 0;
-    background-color: transparent;
-    color: #3DAEE9;
-    min-width: 25px;
+padding: 0px;
+margin: 4px 0 6px 0;
+background-color: transparent;
+color: #3DAEE9;
+min-width: 25px;
+border-radius: 4px;
+transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #workspaces button.active {
-    padding: 0 0 0 0;
-    margin: 4px 0 6px 0;
-    background-color: #3DAEE9;
-    color: #000000;
-    min-width: 25px;
+background-color: #3DAEE9;
+color: #000000;
+font-weight: bold;
 }
 
 #workspaces button:hover {
-    color: #3DAEE9;
-    background: rgba(0, 0, 0, 0.2);
+background-color: rgba(0, 0, 0, 0.2);
+color: #3DAEE9;
 }
 
 #workspaces button.focused {
-    background-color: #bbccdd;
-    color: #323232;
+background-color: #bbccdd;
+color: #323232;
 }
 
 #workspaces button.urgent {
-    color: #eb4d4b;
+color: #eb4d4b;
 }
 
 #clock,
@@ -54,64 +46,67 @@ window#waybar.hidden {
 #memory,
 #network,
 #pulseaudio,
-#idle_inhibitor {
-    padding: 0px 3px;
-    margin: 4px 3px 5px 3px;
-    background-color:transparent;
+#idle_inhibitor,
+#battery,
+#custom-gpu-usage {
+padding: 0px 3px;
+margin: 4px 3px 5px 3px;
+background-color: transparent;
 }
 
 #window,
 #workspaces {
-    margin: 0 4px;
+margin: 0 4px;
 }
 
-#window{
-    color: #3DAEE9;
-}
-
-#clock {
-    color: #3DAEE9;
+#window,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#battery {
+color: #3DAEE9;
 }
 
 label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    color: #3DAEE9;
+#cpu.warning,
+#memory.warning,
+#battery.warning {
+color: #f1c40f;
 }
 
-#memory {
-    color: #3DAEE9;
+#cpu.critical,
+#memory.critical,
+#battery.critical {
+color: #e74c3c;
 }
 
 #network {
-    color: #3DAEE9;
-    margin-right: 8px;
-}
-
-#pulseaudio {
-    color: #3DAEE9;
+color: #3DAEE9;
+margin-right: 8px;
 }
 
 #pulseaudio.muted {
-    color: #a0a0a0;
+color: #a0a0a0;
 }
 
 #idle_inhibitor {
-    color: #3DAEE9;
-    margin-right: 7px;
-    font-size: 18px;
+color: #3DAEE9;
+margin-right: 7px;
+font-size: 18px;
 }
 
 #custom-separator {
-    color: #606060;
-    margin: 0 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
+color: #606060;
+margin: 0 0;
+padding-top: 5px;
+padding-bottom: 5px;
 }
 
 #custom-gpu-usage {
-    color: #3DAEE9;
-    margin: 6px 6px;
+color: #3DAEE9;
+margin: 6px 6px;
 }
