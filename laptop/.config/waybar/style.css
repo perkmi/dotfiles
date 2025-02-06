@@ -47,8 +47,7 @@ color: #eb4d4b;
 #network,
 #pulseaudio,
 #idle_inhibitor,
-#battery,
-#custom-gpu-usage {
+#battery {
 padding: 0px 3px;
 margin: 4px 3px 5px 3px;
 background-color: transparent;
@@ -104,9 +103,4 @@ color: #606060;
 margin: 0 0;
 padding-top: 5px;
 padding-bottom: 5px;
-}
-
-#custom-gpu-usage {
-color: #3DAEE9;
-margin: 6px 6px;
 }
