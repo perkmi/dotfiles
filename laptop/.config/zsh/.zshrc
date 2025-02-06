@@ -21,10 +21,6 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=${ZDOTDIR}/.histfile
 
-# ls colors
-#LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
-#export LS_COLORS
-
 # auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -41,6 +37,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # key binds
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
+bindkey '^[[2~' overwrite-mode
 bindkey '^[[3~' delete-char
 
 # stop odd behavior with tryong to glob match
