@@ -74,11 +74,6 @@ key = "Insert"
 mods = "Shift"
 
 [[keyboard.bindings]]
-chars = "gc"
-key = "Slash"
-mods = "Control"
-
-[[keyboard.bindings]]
 action = "Copy"
 key = "Y"
 mods = "Control"
@@ -101,6 +96,11 @@ mods = "Control"
 [[keyboard.bindings]]
 action = "DecreaseFontSize"
 key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001b[C"
+key = "Semicolon"
 mods = "Control"
 
 [[mouse.bindings]]
