@@ -22,5 +22,6 @@ export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 export CONAN_USER_HOME="$XDG_CONFIG_HOME"
 export OMNISHARPHOME="$XDG_CONFIG_HOME"/omnisharp
 
-export MANPAGER='nvim +Man!'
+export BROWSER="brave"
+export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
