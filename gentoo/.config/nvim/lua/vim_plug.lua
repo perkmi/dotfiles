@@ -40,6 +40,7 @@ Plug 'vimwiki/vimwiki'  -- Personal wiki
 Plug('nvim-telescope/telescope.nvim', { branch = '0.1.x' })  -- Fuzzy finder
 Plug 'nvim-lua/plenary.nvim'  -- Dependency for telescope
 Plug 'pechorin/any-jump.nvim'  -- Code navigation and jump-to-definition
+Plug 'tpope/vim-commentary'  -- Easy Commenting
 
 -- End Plugin Manager
 vim.call('plug#end')
