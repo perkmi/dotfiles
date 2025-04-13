@@ -18,7 +18,7 @@ Plug 'nvim-tree/nvim-web-devicons'  -- Icons for nvim-tree
 Plug 'nvim-tree/nvim-tree.lua'  -- File explorer
 
 -- Syntax Highlighting and Language Support
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn[':TSUpdate'] })  -- Better syntax highlighting
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = function() vim.cmd('TSUpdate') end })  -- Better syntax highlighting
 Plug 'rust-lang/rust.vim'  -- Rust support
 
 -- LSP and Autocompletion

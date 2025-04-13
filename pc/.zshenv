@@ -23,6 +23,7 @@ export CONAN_USER_HOME="$XDG_CONFIG_HOME"
 export OMNISHARPHOME="$XDG_CONFIG_HOME"/omnisharp
 
 export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
+export PATH=$PATH:$CARGO_HOME/bin/
 
 export BROWSER="brave"
 export MANPAGER="nvim +Man!"
