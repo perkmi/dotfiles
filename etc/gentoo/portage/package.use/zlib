@@ -1,0 +1,4 @@
+sys-libs/zlib minizip
+dev-cpp/glog gflags
+sys-apps/i2c-tools python
+dev-util/spirv-tools abi_x86_32

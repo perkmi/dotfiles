@@ -1,0 +1,3 @@
+media-libs/mlt frei0r ffmpeg
+media-libs/opencv contribdnn contrib features2d
+media-video/ffmpeg libass

@@ -1,0 +1,11 @@
+# /dev/sdc3
+UUID=15a26685-3660-4514-a492-3af93251b21e	/         	ext4      	rw,noatime	0 1
+
+# /dev/sdc1
+UUID=DDE8-0C52      	/boot     	vfat      	rw,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sdc2
+UUID=8664adaa-03e8-4dee-9482-0e705f21e1a1	none      	swap      	defaults  	0 0
+
+//192.168.1.5/share /mnt/nas cifs credentials=/home/mikko/.config/nas/smbnas,vers=3.0,x-systemd.automount,_netdev,uid=1026,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+//192.168.1.5/docker /mnt/docker cifs credentials=/home/mikko/.config/nas/smbnas,vers=3.0,x-systemd.automount,_netdev,uid=1026,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0

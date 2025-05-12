@@ -1,0 +1,8 @@
+app-crypt/qca qt6
+sys-auth/polkit-qt qt6
+dev-qt/qt5compat qml
+media-libs/mlt qt6
+kde-frameworks/sonnet qml
+app-text/poppler qt6
+media-libs/phonon qt6
+media-libs/phonon-vlc qt6

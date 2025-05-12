@@ -1,0 +1,5 @@
+net-misc/spice-gtk usbredir
+net-dns/dnsmasq script
+net-libs/gnutls pkcs11 tools
+
+app-emulation/libvirt pcap virt-network numa fuse macvtap vepa qemu

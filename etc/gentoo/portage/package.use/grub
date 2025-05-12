@@ -1,0 +1,3 @@
+# move sys-kernel/installkernel-gentoo sys-kernel/installkernel
+sys-kernel/installkernel grub
+sys-boot/grub mount
