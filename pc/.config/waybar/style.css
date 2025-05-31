@@ -1,7 +1,7 @@
 * {
-border: none;
-font-family: "JetBrainsMono Nerd Font";
-font-size: 14px;
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
 }
 
 window#waybar {
@@ -12,33 +12,33 @@ window#waybar {
 }
 
 #workspaces button {
-padding: 0px;
-margin: 4px 0 6px 0;
-background-color: transparent;
-color: #3DAEE9;
-min-width: 25px;
-border-radius: 4px;
-transition: background-color 0.2s ease, color 0.2s ease;
+    padding: 0px;
+    margin: 4px 0 6px 0;
+    background-color: transparent;
+    color: #3DAEE9;
+    min-width: 25px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #workspaces button.active {
-background-color: #3DAEE9;
-color: #000000;
-font-weight: bold;
+    background-color: #3DAEE9;
+    color: #000000;
+    font-weight: bold;
 }
 
 #workspaces button:hover {
-background-color: rgba(0, 0, 0, 0.2);
-color: #3DAEE9;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #3DAEE9;
 }
 
 #workspaces button.focused {
-background-color: #bbccdd;
-color: #323232;
+    background-color: #bbccdd;
+    color: #323232;
 }
 
 #workspaces button.urgent {
-color: #eb4d4b;
+    color: #eb4d4b;
 }
 
 #clock,
@@ -49,14 +49,14 @@ color: #eb4d4b;
 #idle_inhibitor,
 #battery,
 #custom-gpu-usage {
-padding: 0px 3px;
-margin: 4px 3px 5px 3px;
-background-color: transparent;
+    padding: 0px 3px;
+    margin: 4px 3px 5px 3px;
+    background-color: transparent;
 }
 
 #window,
 #workspaces {
-margin: 0 4px;
+    margin: 0 4px;
 }
 
 #window,
@@ -65,7 +65,7 @@ margin: 0 4px;
 #memory,
 #pulseaudio,
 #battery {
-color: #3DAEE9;
+    color: #3DAEE9;
 }
 
 label:focus {
@@ -75,38 +75,38 @@ label:focus {
 #cpu.warning,
 #memory.warning,
 #battery.warning {
-color: #f1c40f;
+    color: #f1c40f;
 }
 
 #cpu.critical,
 #memory.critical,
 #battery.critical {
-color: #e74c3c;
+    color: #e74c3c;
 }
 
 #network {
-color: #3DAEE9;
-margin-right: 8px;
+    color: #3DAEE9;
+    margin-right: 8px;
 }
 
 #pulseaudio.muted {
-color: #a0a0a0;
+    color: #a0a0a0;
 }
 
 #idle_inhibitor {
-color: #3DAEE9;
-margin-right: 7px;
-font-size: 18px;
+    color: #3DAEE9;
+    margin-right: 7px;
+    font-size: 18px;
 }
 
 #custom-separator {
-color: #606060;
-margin: 0 0;
-padding-top: 5px;
-padding-bottom: 5px;
+    color: #606060;
+    margin: 0 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #custom-gpu-usage {
-color: #3DAEE9;
-margin: 6px 6px;
+    color: #3DAEE9;
+    margin: 6px 6px;
 }
