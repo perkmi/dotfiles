@@ -11,5 +11,3 @@ vim.o.termguicolors = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.clipboard = "unnamedplus"
-
-vim.g.rustfmt_autosave = 1

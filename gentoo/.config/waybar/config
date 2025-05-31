@@ -10,6 +10,8 @@
         "custom/separator",
         "cpu",
         "custom/separator",
+        "custom/gpu-usage",
+        "custom/separator",
         "memory",
         "custom/separator"
     ],
@@ -42,6 +44,14 @@
         "format": "|",
         "interval": "once",
         "tooltip": false
+    },
+    "custom/gpu-usage": {
+        "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+        "format": "󰾲 {}%",
+        "tooltip": true,
+        "tooltip-format": "GPU Usage: {}%",
+        "interval": 5,
+        "on-click": "alacritty -e radeontop -cT"
     },
     "idle_inhibitor": {
         "format": "{icon}",

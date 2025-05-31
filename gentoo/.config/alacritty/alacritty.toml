@@ -64,15 +64,15 @@ y = 0
 
 [keyboard]
 bindings = [
-    { action = "IncreaseFontSize", key = "Equals", mods = "Control" },
-    { action = "DecreaseFontSize", key = "Minus", mods = "Control" },
-    { action = "ResetFontSize", key = "Key0", mods = "Control" },
-    { chars = "\u001b[C", key = "Semicolon", mods = "Control" }
+{ action = "IncreaseFontSize", key = "Equals", mods = "Control" },
+{ action = "DecreaseFontSize", key = "Minus", mods = "Control" },
+{ action = "ResetFontSize", key = "Key0", mods = "Control" },
+{ chars = "\u001b[C", key = "Semicolon", mods = "Control" }
 ]
 
 [mouse]
 bindings = [
-    { action = "Copy", mouse = "Middle" }
+{ action = "Copy", mouse = "Middle" }
 ]
 
 [scrolling]
