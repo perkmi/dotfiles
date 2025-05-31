@@ -2,15 +2,13 @@
     "layer": "top",
     "position": "top",
     "height": 33,
-    "width": 2550,
+    "width": 1910,
     "margin": "3, 0, 2, 0",
     "modules-left": [
         "custom/separator",
         "hyprland/workspaces",
         "custom/separator",
         "cpu",
-        "custom/separator",
-        "custom/gpu-usage",
         "custom/separator",
         "memory",
         "custom/separator"
@@ -23,6 +21,8 @@
         "network",
         "custom/separator",
         "pulseaudio",
+        "custom/separator",
+        "battery",
         "custom/separator",
         "clock",
         "custom/separator",
@@ -44,14 +44,6 @@
         "format": "|",
         "interval": "once",
         "tooltip": false
-    },
-    "custom/gpu-usage": {
-        "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
-        "format": "󰾲 {}%",
-        "tooltip": true,
-        "tooltip-format": "GPU Usage: {}%",
-        "interval": 5,
-        "on-click": "alacritty -e radeontop -cT"
     },
     "idle_inhibitor": {
         "format": "{icon}",
