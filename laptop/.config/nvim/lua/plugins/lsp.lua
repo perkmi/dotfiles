@@ -100,5 +100,7 @@ return {
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })  -- Open code actions menu for LSP suggestions
         vim.keymap.set("n", "<leader>n", function() vim.diagnostic.jump({ count = 1, float = true }) end)
         vim.keymap.set("n", "<leader>N", function() vim.diagnostic.jump({ count = -1, float = true }) end)
+
+        vim.g.rustfmt_autosave = 1
     end,
 }

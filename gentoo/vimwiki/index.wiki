@@ -5,7 +5,20 @@ sudo pacman -S hyprland hyprpaper waybar nm-connection-editor copyq btop neovim 
 paru -S hypridle hyprlock swaync brave-bin nwg-bar zsh-fast-syntax-highlighting qt6gtk2
 
 = neovim =
-:PlugInstall
+To build on debian:
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux-<arch>.deb
+
+= pfetch =
+To install on debian:
+sudo mv pfetch /usr/bin
+
+= fastfetch =
+To build on debian:
+cd build
+cmake ..
+cmake --build . --target fastfetch
+sudo mv fastfetch /usr/bin
 
 = fstab =
 //ip/share /mnt/nas cifs credentials=/path/to/file,vers=3.0,x-systemd.automount,_netdev,uid=1026,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
