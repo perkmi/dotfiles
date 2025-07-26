@@ -5,7 +5,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export LESSHISTFILE="-"
-export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
@@ -21,9 +20,6 @@ export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export XCURSOR_PATH=/usr/share/icons:"$XDG_DATA_HOME"/icons
 export CONAN_USER_HOME="$XDG_CONFIG_HOME"
 export OMNISHARPHOME="$XDG_CONFIG_HOME"/omnisharp
-
-export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
-export PATH=$PATH:$CARGO_HOME/bin/
 
 export BROWSER="brave"
 export MANPAGER="nvim +Man!"
