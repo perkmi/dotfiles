@@ -67,6 +67,7 @@ alias monerod='monerod --prune-blockchain --data-dir /run/media/mikko/Murderface
 alias mbsync="mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc"
 alias ytd="yt-dlp"
 alias obs="flatpak run com.obsproject.Studio"
+alias pixel='grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:-'
 
 # load fast-syntax-highlighting
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
