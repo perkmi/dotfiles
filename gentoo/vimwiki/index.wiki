@@ -57,3 +57,9 @@ Defaults   env_keep += "WAYLAND_DISPLAY"' | sudo tee /etc/sudoers.d/wayland
 
 = Laptop WiFi =
 install rtl8821ce-dkms-git from the AUR
+
+= CUPS =
+sudo usermod -aG lpadmin mikko
+
+emerge --ask net-print/cnijfilter2
+
