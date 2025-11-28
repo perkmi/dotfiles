@@ -1,0 +1,105 @@
+[bell]
+animation = "EaseOutExpo"
+color = "#ffffff"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#666666"
+blue = "#3b8eea"
+cyan = "#29b8db"
+green = "#23d18b"
+magenta = "#d670d6"
+red = "#f14c4c"
+white = "#e5e5e5"
+yellow = "#f5f543"
+
+[colors.cursor]
+cursor = "#d8dee9"
+text = "#191919"
+
+[colors.normal]
+black = "#000000"
+blue = "#2472c8"
+cyan = "#11a8cd"
+green = "#0dbc79"
+magenta = "#bc3fbc"
+red = "#cd3131"
+white = "#e5e5e5"
+yellow = "#e5e510"
+
+[colors.primary]
+background = "#191919"
+foreground = "#d8dee9"
+
+[cursor]
+style = "Underline"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 12
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "JetBrainsMono NFM"
+style = "Medium"
+
+[font.offset]
+x = 0
+y = 0
+
+[keyboard]
+bindings = [
+{ action = "IncreaseFontSize", key = "Equals", mods = "Control" },
+{ action = "DecreaseFontSize", key = "Minus", mods = "Control" },
+{ action = "ResetFontSize", key = "Key0", mods = "Control" },
+{ chars = "\u001b[C", key = "Semicolon", mods = "Control" }
+]
+
+[mouse]
+bindings = [
+{ action = "Copy", mouse = "Middle" }
+]
+
+[scrolling]
+history = 10000
+multiplier = 1
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[window]
+dynamic_padding = false
+dynamic_title = true
+opacity = 0.85
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 120
+lines = 40
+
+[window.padding]
+x = 2
+y = 2
+
+[general]
+live_config_reload = true
