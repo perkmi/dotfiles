@@ -61,7 +61,7 @@ alias ..='cd ..'
 alias cat='bat --paging=never --style=plain'
 alias radeontop='radeontop -cT'
 alias clamdscan='clamdscan --multiscan --fdpass -v'
-alias yeet='paru -Rsc'
+alias yeet='yay -Rsc'
 alias ssh='TERM='xterm-256color' ssh'
 alias monerod='monerod --prune-blockchain --data-dir /run/media/mikko/Murderface/monero/blockchain'
 alias mbsync="mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc"
@@ -83,3 +83,4 @@ bindkey '^[[B' history-substring-search-down
 
 # Created by `pipx` on 2024-03-17 18:13:29
 export PATH="$PATH:/home/mikko/.local/bin"
+export PATH="$PATH:/home/mikko/.lmstudio/bin"

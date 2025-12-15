@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 33,
-    "width": 1920,
+    "width": 1910,
     "margin": "3, 0, 2, 0",
     "modules-left": [
         "custom/separator",

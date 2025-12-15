@@ -133,7 +133,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=8ff306d9a93379c74540e00506966df24df1798b
+ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
 
@@ -145,14 +145,11 @@ Allow Expansion=false
 Automatically select filename extension=true
 Breadcrumb Navigation=true
 Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
-Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
 Show Speedbar=true
-Show hidden files=false
+Show hidden files=true
 Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
