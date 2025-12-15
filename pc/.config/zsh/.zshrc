@@ -9,6 +9,23 @@ function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1) /p'
 }
 
+
+function ff480() {
+    if [ $# -ne 1 ]; then
+        echo "usage: ff480 input_file"
+        return 1
+    fi
+
+    local input_file="$1"
+    local name="${input_file%.*}"
+    local ext="${input_file##*.}"
+    local output_file="${name}.480p.${ext}"
+
+    echo "converting $input_file to $output_file at 480p..."
+
+    ffmpeg -i "$input_file" -vf "scale=-1:480,pad=width=ceil(iw/2)*2:height=480" -c:a copy "$output_file" < /dev/null
+}
+
 COLOR_USR=$'%B%F{blue}'
 COLOR_DIR=$'%B%F{yellow}'
 COLOR_DEF=$'%B%F{green}'
@@ -61,7 +78,7 @@ alias ..='cd ..'
 alias cat='bat --paging=never --style=plain'
 alias radeontop='radeontop -cT'
 alias clamdscan='clamdscan --multiscan --fdpass -v'
-alias yeet='paru -Rsc'
+alias yeet='yay -Rsc'
 alias ssh='TERM='xterm-256color' ssh'
 alias monerod='monerod --prune-blockchain --data-dir /run/media/mikko/Murderface/monero/blockchain'
 alias mbsync="mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc"
@@ -83,3 +100,4 @@ bindkey '^[[B' history-substring-search-down
 
 # Created by `pipx` on 2024-03-17 18:13:29
 export PATH="$PATH:/home/mikko/.local/bin"
+export PATH="$PATH:/home/mikko/.lmstudio/bin"
