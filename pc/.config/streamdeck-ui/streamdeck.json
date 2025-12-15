@@ -74,7 +74,7 @@
                                 "icon": "",
                                 "keys": "",
                                 "write": "",
-                                "command": "alacritty -e paru",
+                                "command": "alacritty -e yay",
                                 "brightness_change": 0,
                                 "switch_page": 0,
                                 "switch_state": 0,
