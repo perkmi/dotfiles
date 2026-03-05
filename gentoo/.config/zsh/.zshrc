@@ -82,3 +82,4 @@ bindkey '^[[B' history-substring-search-down
 
 # Created by `pipx` on 2024-03-17 18:13:29
 export PATH="$PATH:/home/mikko/.local/bin"
+export PATH="$PATH:/home/mikko/.lmstudio/bin"

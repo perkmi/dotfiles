@@ -63,3 +63,5 @@ sudo usermod -aG lpadmin mikko
 
 emerge --ask net-print/cnijfilter2
 
+= gentoo hyprland =
+Exec=dbus-launch --exit-with-session /usr/bin/start-hyprland
