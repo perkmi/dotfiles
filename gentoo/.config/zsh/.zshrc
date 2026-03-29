@@ -69,13 +69,13 @@ alias ytd="yt-dlp"
 alias obs="flatpak run com.obsproject.Studio"
 
 # load fast-syntax-highlighting
-source /home/mikko/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /home/mikko/.config/zsh/fast-syntax-highlighting/F-Sy-H.plugin.zsh
 
 # load zsh-autosuggestions
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 
 # substring search
-source /usr/share/zsh/site-functions/zsh-history-substring-search.zsh
+source /usr/share/zsh/site-functions/_zsh-history-substring-search
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
