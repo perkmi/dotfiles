@@ -6,7 +6,7 @@
  },
  {
    "label": "Logout",
-   "exec": "hyprctl dispatch exit",
+   "exec": "hyprctl dispatch hl.dsp.exit()",
    "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
  },
  {
