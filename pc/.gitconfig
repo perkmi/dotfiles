@@ -1,3 +1,8 @@
 [user]
 	email = 25417912+perkmi@users.noreply.github.com
 	name = Mikko Perkele
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

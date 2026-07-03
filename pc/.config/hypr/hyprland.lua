@@ -219,8 +219,10 @@ hl.config({
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "caps:escape",
         kb_rules   = "",
+
+        numlock_by_default = true,
 
         follow_mouse = 1,
 
@@ -262,7 +264,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-origin"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("alacritty -e nvim"))
