@@ -1,15 +1,3 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
-
 ------------------
 ---- MONITORS ----
 ------------------
@@ -32,15 +20,9 @@ local menu        = "walker"
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & swaync & hyprpaper & otd-daemon & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
+  hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & fcitx5 & swaync & hyprpaper & otd-daemon & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
 end)
-
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -56,26 +38,6 @@ hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
-
-
------------------------
------ PERMISSIONS -----
------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
--- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
--- for security reasons
-
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
-
--- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
--- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
--- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -100,9 +62,8 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
-        layout = "dwindle",
+        layout = "scrolling",
     },
-
     decoration = {
         rounding       = 10,
         rounding_power = 2,
@@ -159,24 +120,6 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
-
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
     dwindle = {
@@ -208,7 +151,6 @@ hl.config({
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
-
 
 ---------------
 ---- INPUT ----
@@ -293,8 +235,8 @@ hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
@@ -314,6 +256,32 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- Horizontal Navigation (Focus/Viewport)
+hl.bind(mainMod .. " + COMMA",  hl.dsp.layout("move -col"))  -- Scroll Left
+hl.bind(mainMod .. " + mouse:275", hl.dsp.layout("move -col"), { mouse = true, click = true })
+hl.bind(mainMod .. " + PERIOD", hl.dsp.layout("move +col"))  -- Scroll Right
+hl.bind(mainMod .. " + mouse:276", hl.dsp.layout("move +col"), { mouse = true, click = true })
+
+-- Scroll through existing workspaces with mainMod + scroll
+hl.bind(mainMod .. " + mouse_down", hl.dsp.layout("move -col"))  -- Scroll Left
+hl.bind(mainMod .. " + mouse_up", hl.dsp.layout("move +col"))  -- Scroll Right
+
+-- Horizontal Manipulation (Move Windows)
+hl.bind(mainMod .. " + SHIFT + COMMA",  hl.dsp.layout("swapcol l")) -- Swap Column Left
+hl.bind(mainMod .. " + SHIFT + PERIOD", hl.dsp.layout("swapcol r")) -- Swap Column Right
+
+-- Focus Utility
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.layout("fit active")) -- Center/Fit active colun
+
+-- Column Width Cycling (Requires explicit_column_widths in hl.config)
+hl.bind(mainMod .. " + C", hl.dsp.layout("colresize +conf")) -- Cycle Width Forward
+hl.bind(mainMod .. " + mouse:274", hl.dsp.layout("colresize +conf"), { mouse = true, click = true })
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.layout("colresize -conf")) -- Cycle Width Backward
+
+-- Fit to Beginning
+hl.bind(mainMod .. " + HOME", hl.dsp.layout("fit tobeg"))
+-- Fit to End
+hl.bind(mainMod .. " + END", hl.dsp.layout("fit toend"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -360,6 +328,7 @@ hl.window_rule({
 hl.window_rule({
     name  = "move-hyprland-run",
     match = { class = "hyprland-run" },
+
 
     move  = "20 monitor_h-120",
     float = true,
