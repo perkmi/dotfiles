@@ -202,7 +202,7 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
@@ -215,12 +215,17 @@ hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("fcitx5"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("nwg-bar"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp -w 0)" - | swappy -f -'))
 
-
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+
+-- Move windows with mainMod + SHIFT + arrow keys
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -271,7 +276,7 @@ hl.bind(mainMod .. " + SHIFT + COMMA",  hl.dsp.layout("swapcol l")) -- Swap Colu
 hl.bind(mainMod .. " + SHIFT + PERIOD", hl.dsp.layout("swapcol r")) -- Swap Column Right
 
 -- Focus Utility
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.layout("fit active")) -- Center/Fit active colun
+hl.bind(mainMod .. " + F", hl.dsp.layout("fit active")) -- Center/Fit active colun
 
 -- Column Width Cycling (Requires explicit_column_widths in hl.config)
 hl.bind(mainMod .. " + C", hl.dsp.layout("colresize +conf")) -- Cycle Width Forward
