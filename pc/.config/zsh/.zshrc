@@ -54,7 +54,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # key binds
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
-bindkey '^[[2~' overwrite-mode
 bindkey '^[[3~' delete-char
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
