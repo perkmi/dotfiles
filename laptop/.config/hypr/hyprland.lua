@@ -99,7 +99,7 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
-        layout = "dwindle",
+        layout = "scrolling",
     },
 
     decoration = {
@@ -218,8 +218,11 @@ hl.config({
         kb_layout  = "us",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "caps:escape",
+
         kb_rules   = "",
+
+        numlock_by_default = true,
 
         follow_mouse = 1,
 
@@ -257,11 +260,11 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
+--hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- not for scrolling
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-origin"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("alacritty -e nvim"))
@@ -269,12 +272,17 @@ hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("fcitx5"))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("nwg-bar"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp -w 0)" - | swappy -f -'))
 
-
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+
+-- Move windows with mainMod + SHIFT + arrow keys
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -288,9 +296,10 @@ end
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
+
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
@@ -310,6 +319,32 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- Horizontal Navigation (Focus/Viewport)
+hl.bind(mainMod .. " + COMMA",  hl.dsp.layout("move -col"))  -- Scroll Left
+hl.bind(mainMod .. " + mouse:275", hl.dsp.layout("move -col"), { mouse = true, click = true })
+hl.bind(mainMod .. " + PERIOD", hl.dsp.layout("move +col"))  -- Scroll Right
+hl.bind(mainMod .. " + mouse:276", hl.dsp.layout("move +col"), { mouse = true, click = true })
+
+-- Scroll through existing workspaces with mainMod + scroll
+hl.bind(mainMod .. " + mouse_down", hl.dsp.layout("move -col"))  -- Scroll Left
+hl.bind(mainMod .. " + mouse_up", hl.dsp.layout("move +col"))  -- Scroll Right
+
+-- Horizontal Manipulation (Move Windows)
+hl.bind(mainMod .. " + SHIFT + COMMA",  hl.dsp.layout("swapcol l")) -- Swap Column Left
+hl.bind(mainMod .. " + SHIFT + PERIOD", hl.dsp.layout("swapcol r")) -- Swap Column Right
+
+-- Focus Utility
+hl.bind(mainMod .. " + F", hl.dsp.layout("fit active")) -- Center/Fit active colun
+
+-- Column Width Cycling (Requires explicit_column_widths in hl.config)
+hl.bind(mainMod .. " + C", hl.dsp.layout("colresize +conf")) -- Cycle Width Forward
+hl.bind(mainMod .. " + mouse:274", hl.dsp.layout("colresize +conf"), { mouse = true, click = true })
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.layout("colresize -conf")) -- Cycle Width Backward
+
+-- Fit to Beginning
+hl.bind(mainMod .. " + HOME", hl.dsp.layout("fit tobeg"))
+-- Fit to End
+hl.bind(mainMod .. " + END", hl.dsp.layout("fit toend"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
