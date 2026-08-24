@@ -39,6 +39,8 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey '^[[2~' overwrite-mode
 bindkey '^[[3~' delete-char
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 # stop odd behavior with tryong to glob match
 setopt nonomatch
