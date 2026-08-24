@@ -338,8 +338,9 @@ hl.bind(mainMod .. " + F", hl.dsp.layout("fit active")) -- Center/Fit active col
 
 -- Column Width Cycling (Requires explicit_column_widths in hl.config)
 hl.bind(mainMod .. " + C", hl.dsp.layout("colresize +conf")) -- Cycle Width Forward
-hl.bind(mainMod .. " + mouse:274", hl.dsp.layout("colresize +conf"), { mouse = true, click = true })
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.layout("colresize -conf")) -- Cycle Width Backward
+hl.bind(mainMod .. " + mouse:274", hl.dsp.layout("colresize +conf"), { mouse = true, click = true })
+hl.bind(mainMod .. " + SHIFT + mouse:274", hl.dsp.layout("colresize -conf"), { mouse = true, click = true })
 
 -- Fit to Beginning
 hl.bind(mainMod .. " + HOME", hl.dsp.layout("fit tobeg"))
