@@ -20,7 +20,7 @@ local menu        = "walker"
 -------------------
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & fcitx5 & swaync & hyprpaper & otd-daemon & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
+  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP /usr/lib/polkit-kde-authentication-agent-1 & $HOME/.config/waybar/reloadway.sh & fcitx5 & swaync & hyprpaper & otd-daemon & gentoo-pipewire-launcher & streamdeck -n & corectrl & copyq --start-server & hypridle & nm-applet & elephant")
 end)
 
 -------------------------------
